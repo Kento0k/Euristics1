@@ -17,9 +17,9 @@ public class Main {
         }
         PackageTask qwerty = new PackageTask();
         Chromosome resultGenetic= qwerty.genetic(capacity, items);
-        List<Item> resultGreedy= qwerty.greedy(capacity, items);
+        int resultGreedy= qwerty.greedy(capacity, items);
         System.out.println("Genetic result:"+ resultGenetic.rezCost);
-        System.out.println("Genetic result:"+ resultGenetic.rezCost);
+        System.out.println("Genetic result:"+ resultGreedy);
     }
 
 }
