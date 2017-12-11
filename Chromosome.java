@@ -7,7 +7,7 @@ import java.util.Random;
 public class Chromosome {
     List<Integer> genes;
     int size;
-    int rezCost;
+    int rezCost=0;
     Chromosome(List<Integer> argGenes){
         genes= argGenes;
         size= argGenes.size();
@@ -20,7 +20,7 @@ public class Chromosome {
                 childGenes.add(this.genes.get(i));
             else{
                 Random rnd= new Random();
-                childGenes.add(Math.abs(rnd.nextInt(1000)%2));
+                childGenes.add(Math.abs(rnd.nextInt(2)));
             }
         }
         return new Chromosome(childGenes);
@@ -28,8 +28,8 @@ public class Chromosome {
     public void mutation(){
         Random rnd = new Random();
         int numb;
-        for (int i = 0; i < size / 5; i++) {
-            numb = Math.abs(rnd.nextInt() % size);
+        for (int i = 0; i < size / 10; i++) {
+            numb = Math.abs(rnd.nextInt(size));
             if ((genes.get(numb) == 0)) {
                 genes.set(numb, 1);
             } else {
